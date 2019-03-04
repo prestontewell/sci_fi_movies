@@ -6,7 +6,13 @@ class Api::SciFiMoviesController < ApplicationController
   end
 
   def create
-    render "show.json.jbuilder"
+    @movie = SciFiMovie.new(
+      title: params[:title],
+      director: params[:director],
+      runtime: params[:runtime]
+      )
+    @movie.save
+    render 'show.json.jbuilder'
   end
 
   def show
@@ -14,5 +20,7 @@ class Api::SciFiMoviesController < ApplicationController
     @movie = SciFiMovie.find_by(id:movie_id)
     render 'show.json.jbuilder'
   end
+
+
 
 end
