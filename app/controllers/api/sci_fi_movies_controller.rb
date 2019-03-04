@@ -4,4 +4,15 @@ class Api::SciFiMoviesController < ApplicationController
     @movies = SciFiMovie.all
     render "index.json.jbuilder"
   end
+
+  def create
+    render "show.json.jbuilder"
+  end
+
+  def show
+    movie_id = params[:id]
+    @movie = SciFiMovie.find_by(id:movie_id)
+    render 'show.json.jbuilder'
+  end
+
 end
