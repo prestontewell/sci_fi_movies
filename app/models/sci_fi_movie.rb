@@ -1,0 +1,2 @@
+class SciFiMovie < ApplicationRecord
+end
