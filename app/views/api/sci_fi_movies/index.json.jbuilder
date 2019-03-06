@@ -1,6 +1,3 @@
 json.array! @movies.each do |movie|
-  json.id movie.id
-  json.title movie.title
-  json.director movie.director
-  json.runtime movie.runtime
+  json.partial! "sci_fi_movies.json.jbuilder", inside_movie: movie
 end

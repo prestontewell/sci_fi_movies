@@ -21,6 +21,17 @@ class Api::SciFiMoviesController < ApplicationController
     render 'show.json.jbuilder'
   end
 
+  def update
+    movie_id = params[:id]
+    @movie = SciFiMovie.find_by(id:movie_id)
+    @movie.title = params[:title] || @movie.title
+    @movie.director = params[:director] || @movie.director
+    @movie.runtime = params[:runtime] || @movie.runtime
+    @movie.save
+    render 'show.json.jbuilder'
+  end
+
+
 
 
 end
