@@ -31,7 +31,10 @@ class Api::SciFiMoviesController < ApplicationController
     render 'show.json.jbuilder'
   end
 
-
-
-
+  def destroy
+    movie_id = params[:id]
+    @movie = SciFiMovie.find_by(id:movie_id)
+    @movie.destroy
+    render 'destroy.json.jbuilder'
+  end
 end

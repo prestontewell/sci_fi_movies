@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     post '/sci_fi_movies' => 'sci_fi_movies#create'
     get '/sci_fi_movies/:id' => 'sci_fi_movies#show'
     patch '/sci_fi_movies/:id' => 'sci_fi_movies#update'
+    delete '/sci_fi_movies/:id' => 'sci_fi_movies#destroy'
   end
 end
